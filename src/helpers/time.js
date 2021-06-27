@@ -1,5 +1,6 @@
 export const nth = function (d) {
     if (d > 3 && d < 21) return 'th';
+
     switch (d % 10) {
         case 1:
             return 'st';
@@ -15,6 +16,7 @@ export const nth = function (d) {
 export const formatTime = (milliseconds) => {
     const time = new Date(milliseconds * 1000);
     if (isNaN(time.getTime())) return false;
+    
     const [weekday, month, date, year] = time.toString().split(' '); //[weekday, month, date, year, hour, timeZone, region]
 
     let hours = time.getHours();

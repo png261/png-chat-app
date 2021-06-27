@@ -1,6 +1,6 @@
 import React from 'react';
-import * as SC from './MainLayout.styles';
 import Sidebar from 'src/components/Sidebar/Sidebar';
+import * as SC from './MainLayout.styles';
 
 const MainLayout = ({ children }) => {
     return (

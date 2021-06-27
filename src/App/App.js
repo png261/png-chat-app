@@ -1,13 +1,13 @@
-import React, { useEffect, lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useStateValue } from 'src/StateProvider';
+import React, { lazy, Suspense, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loading from 'src/components/Loading/Loading';
 import { siteTitle } from 'src/constants/siteInfo';
+import { USER_STORAGE_KEY } from 'src/constants/strorageKey';
+import { useStateValue } from 'src/StateProvider';
 const Home = lazy(() => import('src/pages/Home/Home'));
 const Room = lazy(() => import('src/pages/Room/Room'));
 const Login = lazy(() => import('src/pages/Login/Login'));
 
-const USER_STORAGE_KEY = 'user';
 function App() {
     const [{ user }, dispatch] = useStateValue();
 
